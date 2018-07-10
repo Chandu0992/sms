@@ -31,7 +31,7 @@ def messages():
             req = urllib.request.Request(url,postdata)
             response = urllib.request.urlopen(req)
             output = response.read() # Get Response
-            print("hai")
+            #print("hai")
             return "Message Sent Successfully"
     else:
         return "Invalid Password"
