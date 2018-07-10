@@ -10,6 +10,7 @@ def route():
 def messages():
     password = request.args.get('password')
     if(password == '2194_Prabha'):
+        
         mobiles = request.args.get('mobile')
         message = request.args.get('message')
         authkey = "176467AjyjNl6c5aabf935" # Your authentication key.
@@ -26,13 +27,13 @@ def messages():
                      'route' : route
                      }
         url = "https://control.msg91.com/api/sendhttp.php" # API URL
-            postdata = urllib.parse.urlencode(values) # URL encoding the data here.
-            postdata = postdata.encode('utf-8')
-            req = urllib.request.Request(url,postdata)
-            response = urllib.request.urlopen(req)
-            output = response.read() # Get Response
+        postdata = urllib.parse.urlencode(values) # URL encoding the data here.
+        postdata = postdata.encode('utf-8')
+        req = urllib.request.Request(url,postdata)
+        response = urllib.request.urlopen(req)
+        output = response.read() # Get Response
             #print("hai")
-            return "Message Sent Successfully"
+        return "Message Sent Successfully"
     else:
         return "Invalid Password"
 #"successfully send"
